@@ -3,13 +3,9 @@
   height: 100vh;
 }
 
-#grid-container, #form-grid {
+#grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-
-#form-grid {
-  gap: 0px 15px;
 }
 
 #left-side, #right-side {
@@ -71,6 +67,10 @@ button {
 
 button:hover {
   cursor: pointer;
+}
+
+h1 {
+  text-align: center;
 }
 
 .exception-help {

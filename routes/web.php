@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/signup', "SignUpController@index");
+Route::get('/login', "LoginController@index");
