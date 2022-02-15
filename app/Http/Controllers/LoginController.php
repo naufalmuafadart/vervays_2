@@ -10,4 +10,9 @@ class LoginController extends Controller
     {
         return view('pages.login');
     }
+
+    public function checkLogin(Request $request)
+    {
+        return redirect()->route('home');
+    }
 }

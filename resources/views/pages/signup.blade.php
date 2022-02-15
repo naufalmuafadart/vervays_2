@@ -20,7 +20,7 @@
       <img src="/image/login/left_side_login_content4.png" alt="">
     </div>
     <div id="right-side">
-      <form action="POST" id="formSignup">
+      <form action="/signup" method="post" id="formSignup">
         <h1>Sign Up</h1>
         <p>Daftar akun agar bisa berbelanja di Vervays</p>
 

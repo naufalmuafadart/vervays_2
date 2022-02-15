@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
 Route::get('/signup', "SignUpController@index");
 Route::get('/login', "LoginController@index");
+
+Route::get('/home', "buyer\HomeController@index")->name('home');
+
+Route::post('/api/login', 'LoginController@checkLogin');

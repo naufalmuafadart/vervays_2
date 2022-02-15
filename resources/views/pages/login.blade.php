@@ -20,7 +20,7 @@
       <img src="/image/login/left_side_login_content4.png" alt="">
     </div>
     <div id="right-side">
-      <form action="POST" id="formSignup">
+      <form action="/api/login" method="post" id="formSignup">
         <h1>Login</h1>
 
         @csrf
