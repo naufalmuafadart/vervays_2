@@ -1,8 +1,3 @@
-body {
-  margin: 0px;
-  font-family: Assistant, sans-serif, 'Times New Roman', Times, serif;
-}
-
 #grid-container {
   width: 100%;
   height: 100vh;
@@ -70,14 +65,9 @@ p:nth-child(2) {
 
 button {
   width: 80%;
-  background-color: red;
-  border: none;
-  color: white;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  border-radius: 10px;
   margin-top: 10px;
+}
+
+button:hover {
+  cursor: pointer;
 }

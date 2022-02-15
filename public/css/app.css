@@ -1,0 +1,23 @@
+body {
+  margin: 0px;
+  font-family: Assistant, sans-serif, 'Times New Roman', Times, serif;
+}
+
+button {
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+.slim-button {
+  padding: 3px 10px;
+}
+
+.fat-button {
+  padding: 10px 0px;
+}
