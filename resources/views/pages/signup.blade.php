@@ -1,59 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daftar Akun</title>
+@extends('layouts.login_and_signup')
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
+@section('title')
+  Daftar Akun
+@endsection
 
+@push('add-on-style')
   <link rel="stylesheet" href="/css/signup.css">
-</head>
-<body>
-  <div id="grid-container">
-    <div id="left-side">
-      <img src="/image/login/left_side_login_content4.png" alt="">
+@endpush
+
+@section('content')
+  <form action="/api/signup" method="post" id="formSignup">
+    <h1>Sign Up</h1>
+    <p>Daftar akun agar bisa berbelanja di Vervays</p>
+
+    @csrf
+    <div id="form-grid">
+      <section>
+        <label for="inputFirstName">Nama depan*</label>
+        <input type="text" name="firstname" id="inputFirstName" required>
+      </section>
+
+      <section>
+        <label for="inputLastName">Nama belakang</label>
+        <input type="text" name="lastname" id="inputLastName">
+      </section>
     </div>
-    <div id="right-side">
-      <form action="/api/signup" method="post" id="formSignup">
-        <h1>Sign Up</h1>
-        <p>Daftar akun agar bisa berbelanja di Vervays</p>
 
-        @csrf
-        <div id="form-grid">
-          <section>
-            <label for="inputFirstName">Nama depan*</label>
-            <input type="text" name="firstname" id="inputFirstName" required>
-          </section>
+    <label for="inputEmail">Email*</label>
+    <input type="email" name="email" id="inputEmail" required>
 
-          <section>
-            <label for="inputLastName">Nama belakang</label>
-            <input type="text" name="lastname" id="inputLastName">
-          </section>
-        </div>
+    <label for="inputPassword">Password*</label>
+    <input type="password" name="password" id="inputPassword" minlength="8" required>
 
-        <label for="inputEmail">Email*</label>
-        <input type="email" name="email" id="inputEmail" required>
-
-        <label for="inputPassword">Password*</label>
-        <input type="password" name="password" id="inputPassword" minlength="8" required>
-
-        <div id="centering">
-          <button 
-            type="submit"
-            form="formSignup"
-            class="fat-button"
-            value="Sign Up">Sign Up</button>
-        </div>
-
-        <p class="exception-help">Sudah punya akun? <a href="/login">Login Disini</a></p>
-      </form>
+    <div id="centering">
+      <button 
+        type="submit"
+        form="formSignup"
+        class="fat-button"
+        value="Sign Up">Sign Up</button>
     </div>
-  </div>
-</body>
-</html>
+
+    <p class="exception-help">Sudah punya akun? <a href="/login">Login Disini</a></p>
+  </form>
+@endsection
