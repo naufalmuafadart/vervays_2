@@ -23,3 +23,4 @@ Route::get('/login', "LoginController@index");
 Route::get('/home', "buyer\HomeController@index")->name('home');
 
 Route::post('/api/login', 'LoginController@checkLogin');
+Route::post('/api/signup', 'SignUpController@signUp');
