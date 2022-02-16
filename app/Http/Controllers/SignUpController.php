@@ -43,6 +43,6 @@ class SignUpController extends Controller
             EmailVerificationToken::deleteTokenByUserId($request->user_id);
             User::verificateEmail($request->user_id);
         }
-        return redirect()->route('login');
+        return Redirect::to("/login?email=&response=Email Terverifikasi&rescol=green");
     }
 }

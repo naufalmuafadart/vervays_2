@@ -13,7 +13,7 @@
     <h1>Login</h1>
 
     <div class="alert" id="alert">
-      <p>Email atau password salah</p>
+      <p id="alertMessage">Email atau password salah</p>
     </div>
 
     @csrf
