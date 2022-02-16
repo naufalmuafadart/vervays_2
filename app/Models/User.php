@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -66,6 +67,7 @@ class User extends Authenticatable
         $user->email = $email;
         $user->password = $password;
         $user->save();
+        return $user->id;
     }
 
     public static function checkLogin($email, $password)
@@ -99,5 +101,12 @@ class User extends Authenticatable
         else {
             return null;
         }
+    }
+
+    public static function verificateEmail($userId)
+    {
+        $user = User::find($userId);
+        $user->email_veriefied_at = new Carbon();
+        $user->save();
     }
 }

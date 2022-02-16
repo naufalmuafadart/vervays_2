@@ -1,0 +1,11 @@
+h1, p {
+  text-align: center;
+}
+
+h1 {
+  color: red;
+}
+
+p {
+  margin: 3px 0px;
+}

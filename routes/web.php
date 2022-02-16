@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::middleware(['IsNotLogin'])->group(function() {
     Route::get('/signup', "SignUpController@index")->name('signup');
     Route::get('/login', "LoginController@index")->name('login');
+    Route::get('/email_verification', "SignUpController@emailVerification")->name('email-verification');
+    Route::get('/verificate_email', 'SignUpController@verficateEmail');
 });
 
 Route::middleware(['IsLogin'])->group(function() {
