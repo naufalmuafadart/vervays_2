@@ -1,3 +1,14 @@
 h1 {
   text-align: center;
 }
+
+input[type=email] {
+  margin-bottom: 5px;
+}
+
+small {
+  display: none;
+  margin-bottom: 5px;
+  color: red;
+  float: right;
+}

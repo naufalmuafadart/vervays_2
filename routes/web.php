@@ -17,10 +17,12 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/signup', "SignUpController@index");
-Route::get('/login', "LoginController@index");
+Route::get('/signup', "SignUpController@index")->name('signup');
+Route::get('/login', "LoginController@index")->name('login');
 
 Route::get('/home', "buyer\HomeController@index")->name('home');
 
-Route::post('/api/login', 'LoginController@checkLogin');
-Route::post('/api/signup', 'SignUpController@signUp');
+Route::prefix('api')->group(function() {
+    Route::post('/login', 'LoginController@checkLogin');
+    Route::post('/signup', 'SignUpController@signUp');
+});

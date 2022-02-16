@@ -66,5 +66,24 @@ class User extends Authenticatable
         $user->email = $email;
         $user->password = $password;
         $user->save();
-    }   
+    }
+
+    public static function checkLogin($email, $password)
+    {
+        $user = User::where('email', $email)
+                        ->where('is_deleted', 0)
+                        ->select('password')
+                        ->first();
+        if ($user == null) { // jika tidak ada email yang sesuai
+            return "Email tidak ditemukan";
+        }
+        else { // jika ada email yang sesuai
+            if (Hash::check($password, $user->password)) { // jika password benar
+                return "Login";
+            }
+            else { // jika password salah
+                return "Password salah";
+            }
+        }
+    }
 }

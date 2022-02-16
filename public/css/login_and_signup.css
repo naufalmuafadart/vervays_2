@@ -20,6 +20,20 @@ img, form {
   transform: translate(-50%, -50%);
 }
 
+.alert {
+  display: none;
+  background-color: rgb(247, 215, 218);
+  padding: 1px 0px;
+  margin: 0px 5px;
+  border-radius: 5px;
+}
+
+.alert p {
+  font-weight: 600;
+  text-align: center;
+  margin: 5px 0px;
+}
+
 label, input, button {
   display: block;
   font-weight: 600;

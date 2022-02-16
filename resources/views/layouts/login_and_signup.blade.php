@@ -16,5 +16,6 @@
       @yield('content')
     </div>
   </div>
+  @stack('add-on-script')
 </body>
 </html>

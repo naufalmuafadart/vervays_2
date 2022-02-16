@@ -12,8 +12,13 @@
   <form action="/api/login" method="post" id="formSignup">
     <h1>Login</h1>
 
+    <div class="alert" id="alert">
+      <p>Email atau password salah</p>
+    </div>
+
     @csrf
 
+    <small id="smallalert">Email tidak ditemukan</small>
     <label for="inputEmail">Email</label>
     <input type="email" name="email" id="inputEmail">
 
@@ -32,3 +37,7 @@
     <p class="exception-help">Lupa password? <a href="#">Reset Password</a></p>
   </form>
 @endsection
+
+@push('add-on-script')
+  <script src="/js/login.js" type="text/javascript"></script>
+@endpush
