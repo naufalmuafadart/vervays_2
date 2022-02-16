@@ -7,7 +7,7 @@
       <a href="#">Menu Publisher</a>
       <a href="#">Daftar Pesanan</a>
       <a href="#">Pengaturan Akun</a>
-      <a href="#">Logout</a>
+      <a href="{{ url('/logout') }}">Logout</a>
     </aside>
   </div>
 </header>

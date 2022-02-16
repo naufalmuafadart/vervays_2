@@ -23,6 +23,8 @@ Route::middleware(['IsNotLogin'])->group(function() {
 });
 
 Route::middleware(['IsLogin'])->group(function() {
+    Route::get('/logout', 'LogoutController@index')->name('logout');
+    
     Route::get('/home', "buyer\HomeController@index")->name('home');
 });
 
