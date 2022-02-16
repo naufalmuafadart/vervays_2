@@ -17,11 +17,17 @@ class LoginController extends Controller
     {
         $response = User::checkLogin($request->email, $request->password);
         if ($response == "Login") {
+            $id = User::getIdByEmail($request->email);
+            session(['id' => $id]);
             return redirect()->route('home');
         }
         else {
-            // return redirect()->route('login');
             return Redirect::to("/login?email=".$request->email."&response=".$response);
         }
+    }
+
+    public function check(Request $request)
+    {
+        return User::getIdByEmail($request->email);
     }
 }

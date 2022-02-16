@@ -86,4 +86,18 @@ class User extends Authenticatable
             }
         }
     }
+
+    public static function getIdByEmail($email)
+    {
+        $user = User::where('email', $email)
+                        ->where('is_deleted', 0)
+                        ->select('id')
+                        ->first();
+        if ($user != null) {
+            return $user->id;
+        }
+        else {
+            return null;
+        }
+    }
 }

@@ -17,12 +17,18 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/signup', "SignUpController@index")->name('signup');
-Route::get('/login', "LoginController@index")->name('login');
+Route::middleware(['IsNotLogin'])->group(function() {
+    Route::get('/signup', "SignUpController@index")->name('signup');
+    Route::get('/login', "LoginController@index")->name('login');
+});
 
-Route::get('/home', "buyer\HomeController@index")->name('home');
+Route::middleware(['IsLogin'])->group(function() {
+    Route::get('/home', "buyer\HomeController@index")->name('home');
+});
 
 Route::prefix('api')->group(function() {
-    Route::post('/login', 'LoginController@checkLogin');
-    Route::post('/signup', 'SignUpController@signUp');
+    Route::middleware(['IsNotLogin'])->group(function() {
+        Route::post('/login', 'LoginController@checkLogin');
+        Route::post('/signup', 'SignUpController@signUp');
+    });
 });
