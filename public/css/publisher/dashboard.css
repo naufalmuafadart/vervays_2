@@ -1,0 +1,71 @@
+#publisherInfoSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#publisherInfoSection #profilePhotoWrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#publisherInfoSection table {
+  flex-grow: 6;
+}
+
+#profilePhoto {
+  width: 50px;
+  height: 50px;
+}
+
+#balanceSection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+#balanceSection h1, #balanceSection p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#balanceSection p {
+  font-size: 1.5rem;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#bookSection {
+  width: 100%;
+}
+
+.right-side button, #searchProductContainer {
+  display: inline;
+}
+
+#searchProductContainer {
+  box-sizing: content-box;
+  border: 1px solid black;
+  position: relative;
+}
+
+table#bookTable {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table#bookTable th {
+  border-bottom: 1px solid black;
+}
+
+table#bookTable tr:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+table#bookTable td:not(:last-child) {
+  border-right: 1px solid black;
+}

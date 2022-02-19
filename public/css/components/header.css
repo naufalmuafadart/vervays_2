@@ -46,7 +46,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.fa-search {
+#nav-search .fa-search {
   position: absolute;
   top: 50%;
   right: 9px;

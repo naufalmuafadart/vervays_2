@@ -14,10 +14,25 @@ button {
   border-radius: 10px;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 .slim-button {
   padding: 3px 10px;
+  border-radius: 4px;
 }
 
 .fat-button {
   padding: 10px 0px;
+}
+
+#pageContent {
+  padding: 10px 15px;
+}
+
+.d-flex-space-between-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
