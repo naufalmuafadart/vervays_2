@@ -74,6 +74,7 @@ class User extends Authenticatable
     {
         $user = User::where('email', $email)
                         ->where('is_deleted', 0)
+                        ->where('email_veriefied_at', '!=', null)
                         ->select('password')
                         ->first();
         if ($user == null) { // jika tidak ada email yang sesuai
@@ -108,5 +109,11 @@ class User extends Authenticatable
         $user = User::find($userId);
         $user->email_veriefied_at = new Carbon();
         $user->save();
+    }
+
+    public static function isEmailVerified($userId)
+    {
+        $user = User::find($userId);
+        return $user->email_veriefied_at != null;
     }
 }
