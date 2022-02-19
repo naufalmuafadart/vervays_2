@@ -74,10 +74,70 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>fdh e h</td>
+            <td>90 Masakan Rumahan Untuk Sebulan-Endang Indriani</td>
             <td>Rp. 98.000</td>
             <td>2.3</td>
             <td>5</td>
+            <td>
+              <button class="slim-button">Edit</button>
+              <button class="slim-button">Lihat Detail</button>
+              <button class="slim-button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>fdhghn h</td>
+            <td>Rp. 198.000</td>
+            <td>4.1</td>
+            <td>8</td>
+            <td>
+              <button class="slim-button">Edit</button>
+              <button class="slim-button">Lihat Detail</button>
+              <button class="slim-button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>90 Masakan Rumahan Untuk Sebulan-Laras Kinanthi</td>
+            <td>Rp. 198.000</td>
+            <td>4.1</td>
+            <td>8</td>
+            <td>
+              <button class="slim-button">Edit</button>
+              <button class="slim-button">Lihat Detail</button>
+              <button class="slim-button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>fdhghn h</td>
+            <td>Rp. 198.000</td>
+            <td>4.1</td>
+            <td>8</td>
+            <td>
+              <button class="slim-button">Edit</button>
+              <button class="slim-button">Lihat Detail</button>
+              <button class="slim-button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>fdhghn h</td>
+            <td>Rp. 198.000</td>
+            <td>4.1</td>
+            <td>8</td>
+            <td>
+              <button class="slim-button">Edit</button>
+              <button class="slim-button">Lihat Detail</button>
+              <button class="slim-button">Hapus</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>fdhghn h</td>
+            <td>Rp. 198.000</td>
+            <td>4.1</td>
+            <td>8</td>
             <td>
               <button class="slim-button">Edit</button>
               <button class="slim-button">Lihat Detail</button>
