@@ -39,4 +39,7 @@ Route::prefix('api')->group(function() {
         Route::post('/login', 'LoginController@checkLogin');
         Route::post('/signup', 'SignUpController@signUp');
     });
+    Route::middleware(['IsLogin'])->group(function() {
+        Route::get('/first_name', "api\UserController@getFirstName");
+    });
 });

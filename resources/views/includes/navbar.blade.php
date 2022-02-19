@@ -17,7 +17,7 @@
   </section>
   
   <section id="user-sec">
-    <p>Username</p>
+    <p id="user-sec-username">Username</p>
     <img src="/image/navbar/ic_account.png" alt="">
   </section>
 </nav>

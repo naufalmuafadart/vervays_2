@@ -126,4 +126,10 @@ class User extends Authenticatable
         }
         return $fullname;
     }
+
+    public static function getFirstNameById($userId)
+    {
+        $user = User::find($userId);
+        return $user->first_name;
+    }
 }
