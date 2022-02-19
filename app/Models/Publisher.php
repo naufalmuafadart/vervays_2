@@ -50,4 +50,21 @@ class Publisher extends Model
             $publisher->save();
         }
     }
+
+    public static function getPublisherIdByUserId($userId)
+    {
+        return DB::table('users')
+                    ->join('publishers', 'users.id', '=', 'publishers.user_id')
+                    ->where('users.id', $userId)
+                    ->where('users.is_deleted', 0)
+                    ->select('publishers.id')
+                    ->first()
+                    ->id;
+    }
+
+    public static function getPublisherAttribute($id, $attribute)
+    {
+        $publisher = Publisher::find($id);
+        return $publisher[$attribute];
+    }
 }

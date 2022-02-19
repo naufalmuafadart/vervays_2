@@ -30,13 +30,14 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
     Route::get('/home', "buyer\HomeController@index")->name('home');
     
     Route::prefix('/publisher')->middleware(['IsPublisher'])->group(function() {
-        Route::get('/', 'publisher\DashboardController@index');
+        Route::get('/', 'publisher\DashboardController@index')->name('dashboard-publisher');
         Route::get('/edit', 'publisher\DashboardController@edit');
         Route::get('/cashout', 'publisher\CashoutController@index');
     });
 });
 
 Route::prefix('api')->group(function() {
+    // Route::get('/test', 'publisher\DashboardController@test');
     Route::middleware(['IsNotLogin'])->group(function() {
         Route::post('/login', 'LoginController@checkLogin');
         Route::post('/signup', 'SignUpController@signUp');
