@@ -11,4 +11,9 @@ class DashboardController extends Controller
     {
         return view('pages.publisher.dashboard');
     }
+
+    public function edit(Request $request)
+    {
+        return view('pages.publisher.edit');
+    }
 }

@@ -1,0 +1,10 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 15px;
+  margin-bottom: 15px;
+}
+
+#btnSubmit {
+  float: right;
+}

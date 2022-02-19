@@ -11,7 +11,9 @@
 @section('content')
   <section class="d-flex-space-between-container">
     <h1>Data Penerbit</h1>
-    <button class="slim-button" id="btnUbahData">Ubah Data</button>
+    <a href="{{ url('/publisher/edit') }}">
+      <button class="slim-button" id="btnUbahData">Ubah Data</button>
+    </a>
   </section>
   <section id="publisherInfoSection">
     <div id="profilePhotoWrapper">
@@ -49,8 +51,6 @@
       <h1 class="left-side">Daftar Buku</h1>
       <div class="right-side">
         <button class="slim-button">Tambah Buku</button>
-        {{-- <input type="text" value="">
-        <i class="fa fa-search"></i> --}}
         <div id="searchProductContainer">
           <input type="text" value="">
           <i class="fa fa-search"></i>
