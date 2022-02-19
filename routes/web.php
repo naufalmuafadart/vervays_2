@@ -32,6 +32,7 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
     Route::prefix('/publisher')->middleware(['IsPublisher'])->group(function() {
         Route::get('/', 'publisher\DashboardController@index');
         Route::get('/edit', 'publisher\DashboardController@edit');
+        Route::get('/cashout', 'publisher\CashoutController@index');
     });
 });
 

@@ -43,7 +43,9 @@
   <section id="balanceSection">
     <h1>Saldo</h1>
     <p id="balance">Rp. 1.300.000</p>
-    <button class="slim-button">Cairkan Saldo</button>
+    <a href="/publisher/cashout">
+      <button class="slim-button">Cairkan Saldo</button>
+    </a>
   </section>
   <hr>
   <section id="bookSection">
