@@ -116,4 +116,14 @@ class User extends Authenticatable
         $user = User::find($userId);
         return $user->email_veriefied_at != null;
     }
+
+    public static function getFullNameById($userId)
+    {
+        $user = User::find($userId);
+        $fullname = $user->first_name;
+        if ($user->last_name != null) {
+            $fullname = $fullname." ".$user->last_name;
+        }
+        return $fullname;
+    }
 }

@@ -24,10 +24,14 @@ Route::middleware(['IsNotLogin'])->group(function() {
     Route::get('/verificate_email', 'SignUpController@verficateEmail');
 });
 
-Route::middleware(['IsLogin'])->group(function() {
+Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
     Route::get('/logout', 'LogoutController@index')->name('logout');
     
     Route::get('/home', "buyer\HomeController@index")->name('home');
+    
+    Route::prefix('/publisher')->middleware(['IsPublisher'])->group(function() {
+        Route::get('/', 'publisher\DashboardController@index');
+    });
 });
 
 Route::prefix('api')->group(function() {
