@@ -67,4 +67,11 @@ class Publisher extends Model
         $publisher = Publisher::find($id);
         return $publisher[$attribute];
     }
+
+    public static function updateProfilePhoto($id, $profile_photo_id)
+    {
+        $p = Publisher::find($id);
+        $p->profile_photo_id = $profile_photo_id;
+        $p->save();
+    }
 }

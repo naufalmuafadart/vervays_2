@@ -20,7 +20,7 @@
         for="inputProfilePhotoId">Foto</label>
       <input 
         type="file" 
-        name="profile_photo_id" 
+        name="profile_photo" 
         id="inputProfilePhotoId"
         accept=".jpg,.jpeg,.png">
       <label 
