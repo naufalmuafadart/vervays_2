@@ -31,20 +31,26 @@
       <label for="inputNumberOfPage">Jumlah Halaman</label>
       <input type="number" name="number_of_page" id="inputNumberOfPage" min="1" required>
       
-      <label for="inputBankId">Bahasa</label>
-      <select name="bank_id" id="inputBankId" required>
-        <option value="1" selected>Indonesia</option>
-        <option value="2">Inggris</option>
-        <option value="3">Jepang</option>
-        <option value="4">Jawa</option>
+      <label for="inputLanguageId">Bahasa</label>
+      <select name="language_id" id="inputLanguageId" required>
+        @foreach ($languages as $language)
+          @if ($loop->first)
+            <option value="{{ $language->id }}" selected>{{ $language->name }}</option>
+          @else
+            <option value="{{ $language->id }}">{{ $language->name }}</option>
+          @endif
+        @endforeach
       </select>
 
       <label for="inputCategoryId">Kategori</label>
       <select name="category_id" id="inputCategoryId" required>
-        <option value="1" selected>Resep</option>
-        <option value="2">Fiksi</option>
-        <option value="3">Novel</option>
-        <option value="4">Sains</option>
+        @foreach ($categories as $category)
+          @if ($loop->first)
+            <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+          @else
+            <option value="{{ $category->id }}">{{ $category->name }}</option>
+          @endif
+        @endforeach
       </select>
 
       <label for="inputReleaseAt">Tanggal Rilis</label>
