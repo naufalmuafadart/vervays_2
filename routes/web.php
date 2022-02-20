@@ -33,6 +33,9 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
         Route::get('/', 'publisher\DashboardController@index')->name('dashboard-publisher');
         Route::get('/edit', 'publisher\DashboardController@edit');
         Route::get('/cashout', 'publisher\CashoutController@index');
+        Route::prefix('/book')->group(function() {
+            Route::get('/create', 'publisher\BookController@create');
+        });
     });
 });
 

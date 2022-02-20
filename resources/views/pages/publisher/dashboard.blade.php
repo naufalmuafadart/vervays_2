@@ -52,7 +52,9 @@
     <header class="d-flex-space-between-container">
       <h1 class="left-side">Daftar Buku</h1>
       <div class="right-side">
-        <button class="slim-button">Tambah Buku</button>
+        <a href="/publisher/book/create">
+          <button class="slim-button">Tambah Buku</button>
+        </a>
         <div id="searchProductContainer">
           <input type="text" value="">
           <i class="fa fa-search"></i>

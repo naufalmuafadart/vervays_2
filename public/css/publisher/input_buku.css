@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 15px;
+  margin-bottom: 15px;
+}
+
+.grid-container p {
+  margin: 0px;
+}
+
+.input-and-small-container {
+  width: 100%;
+}
+
+.input-and-small-container input {
+  display: block;
+  width: 100%;
+}
+
+.input-and-small-container small {
+  color: red;
+  display: block;
+}
+
+#btnSubmit {
+  float: right;
+  margin-bottom: 15px;
+}

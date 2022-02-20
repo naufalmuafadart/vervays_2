@@ -46,8 +46,12 @@
   width: 100%;
 }
 
-.right-side button, #searchProductContainer {
+.right-side a, #searchProductContainer {
   display: inline;
+}
+
+.right-side a {
+  text-decoration: none;
 }
 
 #searchProductContainer {
