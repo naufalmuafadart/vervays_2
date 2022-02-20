@@ -1,7 +1,7 @@
 @extends('layouts.app_publisher')
 
 @section('title')
-  Vervays Ebook store
+  Dashboard Publisher
 @endsection
 
 @push('add-on-style')
