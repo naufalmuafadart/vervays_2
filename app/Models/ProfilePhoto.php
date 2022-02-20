@@ -25,4 +25,10 @@ class ProfilePhoto extends Model
         $pp->name = $fileName;
         $pp->save();
     }
+
+    public static function getPhotoURL($id)
+    {
+        $pp = ProfilePhoto::find($id);
+        return "/image/profile_photos/".$id."/".$pp->name;
+    }
 }

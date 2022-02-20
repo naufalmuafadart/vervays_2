@@ -19,7 +19,7 @@
     <div id="profilePhotoWrapper">
       <img
         id="profilePhoto" 
-        src="/image/profile_photos/1/default_publisher_profile_photo.jpg" alt="">
+        src="{{ $profile_photo_url }}" alt="">
     </div>
     <table id="tableLayout">
       <tr>

@@ -16,6 +16,7 @@ class DashboardController extends Controller
             "name" => Publisher::getPublisherAttribute($publisherId, "name"),
             "created_at" => Publisher::getPublisherAttribute($publisherId, "created_at"),
             "description" => Publisher::getPublisherAttribute($publisherId, "description"),
+            "profile_photo_url" => Publisher::getProfilePhotoURL($publisherId),
             "balance" => Publisher::getPublisherAttribute($publisherId, "balance")
         ];
         return view('pages.publisher.dashboard', $data);

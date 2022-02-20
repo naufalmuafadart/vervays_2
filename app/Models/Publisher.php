@@ -74,4 +74,11 @@ class Publisher extends Model
         $p->profile_photo_id = $profile_photo_id;
         $p->save();
     }
+
+    public static function getProfilePhotoURL($id)
+    {
+        $p = Publisher::find($id);
+        $profile_photo_id = $p->profile_photo_id;
+        return ProfilePhoto::getPhotoURL($profile_photo_id);
+    }
 }
