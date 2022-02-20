@@ -25,24 +25,24 @@
       <tr>
         <td>Nama</td>
         <td>:</td>
-        <td>Nama Publisher</td>
+        <td>{{ $name }}</td>
       </tr>
       <tr>
         <td>Bergabung</td>
         <td>:</td>
-        <td>Februari 2022</td>
+        <td>{{ $created_at }}</td>
       </tr>
       <tr>
         <td>Deskripsi</td>
         <td>:</td>
-        <td>Aroma, kopi-luwakhat americano, irish et macchiato saucer milk. Crema dark crema viennese trifecta steamed cortado whipped robust.</td>
+        <td>{{ $description }}</td>
       </tr>
     </table>
   </section>
   <hr>
   <section id="balanceSection">
     <h1>Saldo</h1>
-    <p id="balance">Rp. 1.300.000</p>
+    <p id="balance">Rp. {{ $balance }}</p>
     <a href="/publisher/cashout">
       <button class="slim-button">Cairkan Saldo</button>
     </a>

@@ -10,7 +10,15 @@ class DashboardController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.publisher.dashboard');
+        $userId = session('id', 0);
+        $publisherId = Publisher::getPublisherIdByUserId($userId);
+        $data = [
+            "name" => Publisher::getPublisherAttribute($publisherId, "name"),
+            "created_at" => Publisher::getPublisherAttribute($publisherId, "created_at"),
+            "description" => Publisher::getPublisherAttribute($publisherId, "description"),
+            "balance" => Publisher::getPublisherAttribute($publisherId, "balance")
+        ];
+        return view('pages.publisher.dashboard', $data);
     }
 
     public function edit(Request $request)
