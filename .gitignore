@@ -15,4 +15,6 @@ yarn-error.log
 /.vscode
 
 public/image/profile_photos
+public/ebook
+public/debug
 vervays_2.sql

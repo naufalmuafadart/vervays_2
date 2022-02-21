@@ -47,5 +47,7 @@ Route::prefix('api')->group(function() {
     });
     Route::middleware(['IsLogin'])->group(function() {
         Route::get('/first_name', "api\UserController@getFirstName");
+        Route::post('/publisher/update', 'api\PublisherController@update');
+        Route::post('/publisher/book/store', 'api\BookController@store');
     });
 });

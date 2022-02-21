@@ -10,7 +10,7 @@
 
 @section('content')
   <form
-    action=""
+    action="/api/publisher/book/store"
     method="POST"
     enctype="multipart/form-data">
     <h1>Tambah Buku</h1>
