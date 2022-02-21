@@ -1,3 +1,6 @@
+const bookTable = document.getElementById("bookTable");
+const infoNoBook = document.getElementById("infoNoBook");
+
 function setupJoinPublisher() {
   const publisherJoinDateEl = document.getElementById("publisherJoinDate");
   date = publisherJoinDateEl.innerHTML;
@@ -21,9 +24,23 @@ function setupPriceFormat() {
   }
 }
 
+function setupFetch() {
+  fetch("/api/publisher/publisher_book_for_dashboard_publisher")
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0) {
+        setupPriceFormat();
+      }
+      else {
+        bookTable.style.display = "none";
+        infoNoBook.style.display = "block";
+      }
+    });
+}
+
 function setup() {
   setupJoinPublisher();
-  setupPriceFormat();
+  setupFetch();
 }
 
 setup();

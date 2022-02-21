@@ -97,3 +97,9 @@ table#bookTable {
 #bookTable td:nth-child(5) {
   text-align: center;
 }
+
+p#infoNoBook {
+  margin: 0px;
+  display: none;
+  text-align: center;
+}

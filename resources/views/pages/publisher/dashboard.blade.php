@@ -92,6 +92,7 @@
           @endforeach
         </tbody>
       </table>
+      <p id="infoNoBook">Buku belum ditambahkan</p>
     </main>
   </section>
 @endsection

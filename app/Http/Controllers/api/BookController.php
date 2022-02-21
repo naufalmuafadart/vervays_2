@@ -73,8 +73,9 @@ class BookController extends Controller
         return Redirect::route('dashboard-publisher');
     }
 
-    public function getBookForDashboardPublisher(Request $request)
+    public function getBookForDashboardPublisher()
     {
-        # code...
+        $publisherId = Publisher::getPublisherIdByUserId(session('id'));
+        return Book::getDataForDashboardPublisher($publisherId);
     }
 }
