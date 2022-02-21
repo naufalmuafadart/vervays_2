@@ -1,3 +1,17 @@
+function setupJoinPublisher() {
+  const publisherJoinDateEl = document.getElementById("publisherJoinDate");
+  date = publisherJoinDateEl.innerHTML;
+  date = date.substring(0, 11);
+  date = new Date(date);
+
+  month = convertMonthIntToStringBahasa(date.getMonth() + 1);
+  year = date.getUTCFullYear();
+
+  date = month + " " + year;
+
+  publisherJoinDateEl.innerHTML = date;
+}
+
 function setupPriceFormat() {
   const priceElements = document.getElementsByClassName("price");
 
@@ -8,6 +22,7 @@ function setupPriceFormat() {
 }
 
 function setup() {
+  setupJoinPublisher();
   setupPriceFormat();
 }
 

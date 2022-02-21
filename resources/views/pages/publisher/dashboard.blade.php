@@ -30,7 +30,7 @@
       <tr>
         <td>Bergabung</td>
         <td>:</td>
-        <td>{{ $created_at }}</td>
+        <td id="publisherJoinDate">{{ $created_at }}</td>
       </tr>
       <tr>
         <td>Deskripsi</td>
