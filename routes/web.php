@@ -47,7 +47,12 @@ Route::prefix('api')->group(function() {
     });
     Route::middleware(['IsLogin'])->group(function() {
         Route::get('/first_name', "api\UserController@getFirstName");
-        Route::post('/publisher/update', 'api\PublisherController@update');
-        Route::post('/publisher/book/store', 'api\BookController@store');
+
+        Route::prefix('/publisher')->group(function() {
+            Route::get('/publisher_book_for_dashboard_publisher', 'api\BookController@getBookForDashboardPublisher');
+
+            Route::post('/update', 'api\PublisherController@update');
+            Route::post('/book/store', 'api\BookController@store');
+        });
     });
 });

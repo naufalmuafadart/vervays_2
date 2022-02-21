@@ -72,4 +72,9 @@ class BookController extends Controller
 
         return Redirect::route('dashboard-publisher');
     }
+
+    public function getBookForDashboardPublisher(Request $request)
+    {
+        # code...
+    }
 }

@@ -17,4 +17,14 @@ class Book extends Model
         "is_editor_choice" => false,
         "is_deleted" => false,
     ];
+
+    public static function getDataForDashboardPublisher($publisherId)
+    {
+        $books = Book::where('publisher_id', $publisherId)->select('id', 'title', 'price')->get();
+        foreach ($books as $book) {
+            $book->rating = "-";
+            $book->pcs_sold = 0;
+        }
+        return $books;
+    }
 }

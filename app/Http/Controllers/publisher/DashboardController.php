@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\publisher;
 
 use App\Http\Controllers\Controller;
+use App\Models\Book;
 use App\Models\Publisher;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class DashboardController extends Controller
             "created_at" => Publisher::getPublisherAttribute($publisherId, "created_at"),
             "description" => Publisher::getPublisherAttribute($publisherId, "description"),
             "profile_photo_url" => Publisher::getProfilePhotoURL($publisherId),
-            "balance" => Publisher::getPublisherAttribute($publisherId, "balance")
+            "balance" => Publisher::getPublisherAttribute($publisherId, "balance"),
+            "books" => Book::getDataForDashboardPublisher($publisherId),
         ];
         return view('pages.publisher.dashboard', $data);
     }
@@ -36,6 +38,6 @@ class DashboardController extends Controller
 
     // public function test(Request $request)
     // {
-    //     return Publisher::getPublisherIdByUserId(1);
+    //     return Book::getDataForDashboardPublisher(1);
     // }
 }
