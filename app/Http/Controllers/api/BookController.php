@@ -130,4 +130,11 @@ class BookController extends Controller
 
         return Redirect::route('dashboard-publisher');
     }
+
+    public function delete(Request $request)
+    {
+        $b = Book::find($request->id);
+        $b->is_deleted = true;
+        $b->save();
+    }
 }

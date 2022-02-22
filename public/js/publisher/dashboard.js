@@ -38,6 +38,22 @@ function setupFetch() {
     });
 }
 
+function deleteBook(id, title) {
+  willDeleteBook = confirm("Apakah anda yakin akan menghapus buku "+ title);
+  let _token = getMeta("csrf-token");
+  if (willDeleteBook) {
+    fetch('/api/publisher/book/delete', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({_token, id})
+    }).then(res => res.json())
+      .then(window.location.reload());
+  }
+}
+
 function setup() {
   setupJoinPublisher();
   setupFetch();

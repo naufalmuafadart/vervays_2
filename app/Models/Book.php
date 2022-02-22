@@ -20,7 +20,9 @@ class Book extends Model
 
     public static function getDataForDashboardPublisher($publisherId)
     {
-        $books = Book::where('publisher_id', $publisherId)->select('id', 'title', 'price')->get();
+        $books = Book::where('publisher_id', $publisherId)
+                        ->where('is_deleted', false)
+                        ->select('id', 'title', 'price')->get();
         foreach ($books as $book) {
             $book->rating = "-";
             $book->pcs_sold = 0;

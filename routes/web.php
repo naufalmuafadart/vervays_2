@@ -56,6 +56,7 @@ Route::prefix('api')->group(function() {
             Route::prefix('/book') ->group(function() {
                 Route::post('/store', 'api\BookController@store');
                 Route::post('/update', 'api\BookController@update');
+                Route::post('/delete', 'api\BookController@delete');
             });
         });
     });

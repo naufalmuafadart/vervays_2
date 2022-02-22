@@ -87,8 +87,10 @@
                 <a href="/publisher/book/edit/{{$book->id}}">
                   <button class="slim-button">Edit</button>
                 </a>
-                <button class="slim-button">Lihat Detail</button>
-                <button class="slim-button">Hapus</button>
+                <a href="">
+                  <button class="slim-button">Lihat Detail</button>
+                </a>
+                <button onclick="deleteBook({{ $book->id }}, '{{ $book->title }}')" class="slim-button">Hapus</button>
               </td>
             </tr>
           @endforeach
