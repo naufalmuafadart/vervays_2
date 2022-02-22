@@ -98,6 +98,10 @@ table#bookTable {
   text-align: center;
 }
 
+#bookTable a {
+  text-decoration: none;
+}
+
 p#infoNoBook {
   margin: 0px;
   display: none;

@@ -27,4 +27,10 @@ class Book extends Model
         }
         return $books;
     }
+
+    public static function getBookForEditBook($id)
+    {
+        $b = Book::find($id);
+        return $b;
+    }
 }

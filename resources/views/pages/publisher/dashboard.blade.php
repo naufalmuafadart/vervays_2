@@ -84,7 +84,9 @@
               <td>{{$book->rating}}</td>
               <td>{{$book->pcs_sold}}</td>
               <td>
-                <button class="slim-button">Edit</button>
+                <a href="/publisher/book/edit/{{$book->id}}">
+                  <button class="slim-button">Edit</button>
+                </a>
                 <button class="slim-button">Lihat Detail</button>
                 <button class="slim-button">Hapus</button>
               </td>

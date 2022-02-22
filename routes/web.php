@@ -35,6 +35,7 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
         Route::get('/cashout', 'publisher\CashoutController@index');
         Route::prefix('/book')->group(function() {
             Route::get('/create', 'publisher\BookController@create');
+            Route::get('/edit/{id}', 'publisher\BookController@edit');
         });
     });
 });
@@ -52,7 +53,10 @@ Route::prefix('api')->group(function() {
             Route::get('/publisher_book_for_dashboard_publisher', 'api\BookController@getBookForDashboardPublisher');
 
             Route::post('/update', 'api\PublisherController@update');
-            Route::post('/book/store', 'api\BookController@store');
+            Route::prefix('/book') ->group(function() {
+                Route::post('/store', 'api\BookController@store');
+                Route::post('/update', 'api\BookController@update');
+            });
         });
     });
 });

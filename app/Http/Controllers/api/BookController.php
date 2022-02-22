@@ -78,4 +78,56 @@ class BookController extends Controller
         $publisherId = Publisher::getPublisherIdByUserId(session('id'));
         return Book::getDataForDashboardPublisher($publisherId);
     }
+
+    public function update(Request $request)
+    {
+        $book = Book::find($request->id);
+
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->abstract = $request->abstract;
+        $book->number_of_page = $request->number_of_page;
+        $book->language_id = $request->language_id;
+        $book->category_id = $request->category_id;
+        $book->release_at = $request->release_at;
+        $book->price = $request->price;
+
+        // Simpan file sample ebook
+        if ($request->file('sample_ebook_file') != null) {
+            $sampleEbookFileId = SampleEbookFile::count() + 1;
+            $sampleEbook = $request->file('sample_ebook_file');
+            $file_name = $sampleEbook->getClientOriginalName();
+            $upload_directory = 'ebook/sample_ebook_files/'.$sampleEbookFileId;
+            $sampleEbook->move($upload_directory,$file_name);
+
+            // Menyimpan data file sample ebook di database
+            $sif = new SampleEbookFile();
+            $sif->id = SampleEbookFile::count() + 1;
+            $sif->name = $sampleEbook->getClientOriginalName();
+            $sif->save();
+
+            $book->sample_ebook_file_id = $sampleEbookFileId;
+        }
+
+        // Simpan file cover ebook
+        if ($request->file('ebook_cover_file') != null) {
+            $ebookCoverId = EbookCover::count() + 1;
+            $ebookCoverFile = $request->file('ebook_cover_file');
+            $file_name = $ebookCoverFile->getClientOriginalName();
+            $upload_directory = 'ebook/ebook_cover/'.$ebookCoverId;
+            $ebookCoverFile->move($upload_directory,$file_name);
+
+            // Menyimpan data file cover ebook di database
+            $ebookCover = new EbookCover();
+            $ebookCover->id = EbookCover::count() + 1;
+            $ebookCover->name = $ebookCoverFile->getClientOriginalName();
+            $ebookCover->save();
+
+            $book->ebook_cover_id = $ebookCoverId;
+        }
+
+        $book->save();
+
+        return Redirect::route('dashboard-publisher');
+    }
 }
