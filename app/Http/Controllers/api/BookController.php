@@ -9,6 +9,7 @@ use App\Models\EbookFile;
 use App\Models\Publisher;
 use App\Models\SampleEbookFile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class BookController extends Controller
@@ -136,5 +137,21 @@ class BookController extends Controller
         $b = Book::find($request->id);
         $b->is_deleted = true;
         $b->save();
+    }
+
+    public function getNewestBook()
+    {
+        // return Book::where("is_deleted", 0)
+        //                 ->orderBy("release_at", "desc")
+        //                 ->limit(6)
+        //                 ->select('id', 'title', 'author', 'price')
+        //                 ->get();
+        return DB::table("books")
+                    ->join('ebook_cover', 'books.ebook_cover_id', '=', 'ebook_cover.id')
+                    ->where('is_deleted', 0)
+                    ->orderBy("release_at", "desc")
+                    ->select('books.id', 'title', 'author', 'price', 'ebook_cover_id', 'name')
+                    ->limit(6)
+                    ->get();
     }
 }

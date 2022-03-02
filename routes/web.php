@@ -41,13 +41,17 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
 });
 
 Route::prefix('api')->group(function() {
-    // Route::get('/test', 'publisher\DashboardController@test');
+    Route::get('/test', 'api\BookController@getNewestBook');
     Route::middleware(['IsNotLogin'])->group(function() {
         Route::post('/login', 'LoginController@checkLogin');
         Route::post('/signup', 'SignUpController@signUp');
     });
     Route::middleware(['IsLogin'])->group(function() {
         Route::get('/first_name', "api\UserController@getFirstName");
+
+        Route::prefix('/book')->group(function() {
+            Route::get('/newest_book', 'api\BookController@getNewestBook');
+        });
 
         Route::prefix('/publisher')->group(function() {
             Route::get('/publisher_book_for_dashboard_publisher', 'api\BookController@getBookForDashboardPublisher');
