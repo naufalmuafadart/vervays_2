@@ -141,15 +141,21 @@ class BookController extends Controller
 
     public function getNewestBook()
     {
-        // return Book::where("is_deleted", 0)
-        //                 ->orderBy("release_at", "desc")
-        //                 ->limit(6)
-        //                 ->select('id', 'title', 'author', 'price')
-        //                 ->get();
         return DB::table("books")
                     ->join('ebook_cover', 'books.ebook_cover_id', '=', 'ebook_cover.id')
                     ->where('is_deleted', 0)
                     ->orderBy("release_at", "desc")
+                    ->select('books.id', 'title', 'author', 'price', 'ebook_cover_id', 'name')
+                    ->limit(6)
+                    ->get();
+    }
+
+    public function getEditorChoiceBook()
+    {
+        return DB::table("books")
+                    ->join('ebook_cover', 'books.ebook_cover_id', '=', 'ebook_cover.id')
+                    ->where('books.is_deleted', 0)
+                    ->where('books.is_editor_choice', 1)
                     ->select('books.id', 'title', 'author', 'price', 'ebook_cover_id', 'name')
                     ->limit(6)
                     ->get();

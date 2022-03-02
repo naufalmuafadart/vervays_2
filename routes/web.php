@@ -41,7 +41,7 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
 });
 
 Route::prefix('api')->group(function() {
-    Route::get('/test', 'api\BookController@getNewestBook');
+    Route::get('/test', 'api\BookController@getEditorChoiceBook');
     Route::middleware(['IsNotLogin'])->group(function() {
         Route::post('/login', 'LoginController@checkLogin');
         Route::post('/signup', 'SignUpController@signUp');
@@ -51,6 +51,7 @@ Route::prefix('api')->group(function() {
 
         Route::prefix('/book')->group(function() {
             Route::get('/newest_book', 'api\BookController@getNewestBook');
+            Route::get('/editor_choice', 'api\BookController@getEditorChoiceBook');
         });
 
         Route::prefix('/publisher')->group(function() {
