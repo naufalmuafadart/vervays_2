@@ -25,10 +25,10 @@ async function getNewestBook() {
           const title = clone.querySelector("p.title");
           const author = clone.querySelector("p.author");
           const price = clone.querySelector("p.price");
-          img.setAttribute("src", "/ebook/ebook_cover/"+data[i].ebook_cover_id+"/"+data[i].name);
+          img.setAttribute("src", getEbookCoverURL(data[i].ebook_cover_id, data[i].name));
           title.innerHTML = data[i].title;
           author.innerHTML = data[i].author;
-          price.innerHTML = data[i].price;
+          price.innerHTML = convertToRupiah(data[i].price);
           newestBookContainer.append(clone);
         }
     }
@@ -56,10 +56,10 @@ async function getEditorChoiceBook() {
           const title = clone.querySelector("p.title");
           const author = clone.querySelector("p.author");
           const price = clone.querySelector("p.price");
-          img.setAttribute("src", "/ebook/ebook_cover/"+data[i].ebook_cover_id+"/"+data[i].name);
+          img.setAttribute("src", getEbookCoverURL(data[i].ebook_cover_id, data[i].name));
           title.innerHTML = data[i].title;
           author.innerHTML = data[i].author;
-          price.innerHTML = data[i].price;
+          price.innerHTML = convertToRupiah(data[i].price);
           editorChoiceBookContainer.append(clone);
         }
     }

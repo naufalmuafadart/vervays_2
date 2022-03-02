@@ -63,3 +63,7 @@ function convertMonthIntToStringBahasa(intMonth) {
   }
   return stringMonth;
 }
+
+function getEbookCoverURL(ebook_cover_id, file_name) {
+  return "/ebook/ebook_cover/"+ebook_cover_id+"/"+file_name;
+}
