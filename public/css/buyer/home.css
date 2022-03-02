@@ -1,1 +1,63 @@
-/* Navbar */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  text-decoration: none;
+}
+
+.grid-container:last-of-type {
+  margin-bottom: 30px;
+}
+
+.grid-container p {
+  margin: 0px;
+}
+
+.grid-container p, .grid-container .star-container {
+  margin-left: 4px;
+}
+
+.grid-item img.placeholder {
+  width: 95%;
+  align-self: center;
+}
+
+p.title {
+  font-weight: 700;
+  overflow: hidden;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
+
+p.author {
+  font-weight: 400;
+  color: grey;
+}
+
+p.prevPrice {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+
+.star-container {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+img.star {
+  width: 20px;
+}
+
+h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+h1:first-of-type {
+  margin-top: 0px;
+}
