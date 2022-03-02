@@ -42,7 +42,10 @@ class SignUpController extends Controller
         if (EmailVerificationToken::isExist($request->token, $request->user_id)) {
             EmailVerificationToken::deleteTokenByUserId($request->user_id);
             User::verificateEmail($request->user_id);
+            return Redirect::to("/login?email=&response=Email Terverifikasi&rescol=green");
         }
-        return Redirect::to("/login?email=&response=Email Terverifikasi&rescol=green");
+        else {
+            return view('pages.error.404');
+        }
     }
 }
