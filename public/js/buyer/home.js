@@ -21,10 +21,13 @@ async function getNewestBook() {
         for (let i =0; i < data.length; i++) {
           console.log(data[i]);
           let clone = template.content.cloneNode(true);
+          const a = clone.querySelector("a");
           const img = clone.querySelector("img");
           const title = clone.querySelector("p.title");
           const author = clone.querySelector("p.author");
           const price = clone.querySelector("p.price");
+
+          a.setAttribute("href", `http://127.0.0.1:8000/book/${data[i].id}/${string_to_slug(data[i].title)}`);
           img.setAttribute("src", getEbookCoverURL(data[i].ebook_cover_id, data[i].name));
           title.innerHTML = data[i].title;
           author.innerHTML = data[i].author;
@@ -52,10 +55,13 @@ async function getEditorChoiceBook() {
         for (let i =0; i < data.length; i++) {
           console.log(data[i]);
           let clone = template.content.cloneNode(true);
+          const a = clone.querySelector("a");
           const img = clone.querySelector("img");
           const title = clone.querySelector("p.title");
           const author = clone.querySelector("p.author");
           const price = clone.querySelector("p.price");
+
+          a.setAttribute("href", `http://127.0.0.1:8000/book/${data[i].id}/${string_to_slug(data[i].title)}`);
           img.setAttribute("src", getEbookCoverURL(data[i].ebook_cover_id, data[i].name));
           title.innerHTML = data[i].title;
           author.innerHTML = data[i].author;

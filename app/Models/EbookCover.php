@@ -12,4 +12,9 @@ class EbookCover extends Model
     protected $table = "ebook_cover";
     protected $primaryKey = 'id';
     public $incrementing = false;
+
+    public static function getNameById($id)
+    {
+        return EbookCover::where("id", $id)->first()->name;
+    }
 }

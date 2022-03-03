@@ -29,6 +29,7 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
     Route::get('/logout', 'LogoutController@index')->name('logout');
     
     Route::get('/home', "buyer\HomeController@index")->name('home');
+    Route::get('/book/{id}/{title}', "buyer\BookController@index");
     
     Route::prefix('/publisher')->middleware(['IsPublisher'])->group(function() {
         Route::get('/', 'publisher\DashboardController@index')->name('dashboard-publisher');
