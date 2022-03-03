@@ -37,4 +37,9 @@ class EmailVerificationToken extends Model
     {
         EmailVerificationToken::where('user_id', $user_id)->delete();
     }
+
+    public static function getTokenByUserId($user_id)
+    {
+        return EmailVerificationToken::where("user_id", $user_id)->first()->token;
+    }
 }

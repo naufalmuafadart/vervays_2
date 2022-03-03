@@ -11,6 +11,12 @@ function getMeta(metaName) {
   return '';
 }
 
+function getHTTPParam(param) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get(param);
+}
+
 function convertToRupiah(angka)
 {
 	var rupiah = '';		

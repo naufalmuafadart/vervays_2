@@ -78,7 +78,16 @@ class User extends Authenticatable
                         ->select('password')
                         ->first();
         if ($user == null) { // jika tidak ada email yang sesuai
-            return "Email tidak ditemukan";
+            $user = User::where('email', $email)
+                            ->where('is_deleted', 0)
+                            ->select('password')
+                            ->first();
+            if ($user==null) {
+                return "Email tidak ditemukan";
+            }
+            else {
+                return "Email belum terverifikasi";
+            }
         }
         else { // jika ada email yang sesuai
             if (Hash::check($password, $user->password)) { // jika password benar
@@ -131,5 +140,10 @@ class User extends Authenticatable
     {
         $user = User::find($userId);
         return $user->first_name;
+    }
+
+    public static function getEmailById($id)
+    {
+        return User::where('id', $id)->first()->email;
     }
 }

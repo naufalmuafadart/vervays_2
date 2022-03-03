@@ -9,3 +9,14 @@ h1 {
 p {
   margin: 3px 0px;
 }
+
+.centering {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 6px 15px !important;
+  margin-top: 12px;
+}

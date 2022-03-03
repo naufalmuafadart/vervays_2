@@ -22,6 +22,7 @@ Route::middleware(['IsNotLogin'])->group(function() {
     Route::get('/login', "LoginController@index")->name('login');
     Route::get('/email_verification', "SignUpController@emailVerification")->name('email-verification');
     Route::get('/verificate_email', 'SignUpController@verficateEmail');
+    Route::post('/resend_email_verification', 'SignUpController@resendEmailVerification');
 });
 
 Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
@@ -41,7 +42,7 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
 });
 
 Route::prefix('api')->group(function() {
-    Route::get('/test', 'api\BookController@getEditorChoiceBook');
+    Route::get('/test', 'SignUpController@resendEmailVerification');
     Route::middleware(['IsNotLogin'])->group(function() {
         Route::post('/login', 'LoginController@checkLogin');
         Route::post('/signup', 'SignUpController@signUp');

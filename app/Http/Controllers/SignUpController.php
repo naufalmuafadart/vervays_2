@@ -27,13 +27,14 @@ class SignUpController extends Controller
         );
         $token = EmailVerificationToken::createToken($user_id);
         Mail::to($request->email)->send(new UserVerificationMail($token, $user_id));
-        return Redirect::to('/email_verification?email='.$request->email);
+        return Redirect::to('/email_verification?email='.$request->email."&isresend=false&userid=".$user_id);
     }
 
     public function emailVerification(Request $request)
     {
         return view('pages.email_verification', [
-            "email" => $request->email
+            "email" => $request->email,
+            "isResend" => $request->isresend,
         ]);
     }
 
@@ -47,5 +48,14 @@ class SignUpController extends Controller
         else {
             return view('pages.error.404');
         }
+    }
+
+    public function resendEmailVerification(Request $request)
+    {
+        $user_id = $request->userid;
+        $token = EmailVerificationToken::getTokenByUserId($user_id);
+        $email = User::getEmailById($user_id);
+        Mail::to($email)->send(new UserVerificationMail($token, $user_id));
+        return true;
     }
 }

@@ -21,6 +21,10 @@ class LoginController extends Controller
             session(['id' => $id]);
             return redirect()->route('home');
         }
+        else if ($response == "Email belum terverifikasi") {
+            $id = User::getIdByEmail($request->email);
+            return Redirect::to('/email_verification?email='.$request->email."&isresend=true&userid=".$id);
+        }
         else {
             return Redirect::to("/login?email=".$request->email."&response=".$response);
         }
