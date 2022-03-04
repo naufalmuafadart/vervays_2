@@ -27,7 +27,7 @@
         <img src="/image/icon/blank_star.png" alt="" class="star star4">
         <img src="/image/icon/blank_star.png" alt="" class="star star5">
       </div>
-      {{-- <p class="prevPrice">Rp. 54.000</p> --}}
+      {{-- <p class="discPrice">Rp. 54.000</p> --}}
       <p class="price">Rp. 45.000</p>
     </a>
   </template>

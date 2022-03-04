@@ -40,7 +40,7 @@ p.author {
   color: grey;
 }
 
-p.prevPrice {
+p.discPrice {
   font-size: 0.9rem;
   text-decoration: line-through;
 }

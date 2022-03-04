@@ -13,6 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+/diagram
 
 public/image/profile_photos
 public/ebook

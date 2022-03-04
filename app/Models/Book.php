@@ -74,4 +74,17 @@ class Book extends Model
         $book->number_of_page = $bookClass->number_of_page;
         return $book;
     }
+
+    public static function getBookForWishlistPage($books_id)
+    {
+        $books = DB::table('books')
+                        ->whereIn("id", $books_id)
+                        ->select('id', 'title', 'author', 'abstract', 'price', 'ebook_cover_id')
+                        ->get();
+        foreach ($books as $book) {
+            $ebookCoverId = $book->ebook_cover_id;
+            $book->thumbnail = env("BASE_PATH")."/ebook/ebook_cover/".$ebookCoverId."/".EbookCover::getNameById($ebookCoverId);
+        }
+        return $books;
+    }
 }

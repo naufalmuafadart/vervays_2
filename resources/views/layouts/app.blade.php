@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   @include('includes.meta')
+  @stack('add-on-meta')
   <title>@yield('title')</title>
   @include('includes.style')
   @stack('add-on-style')

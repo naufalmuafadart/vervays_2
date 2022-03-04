@@ -24,9 +24,19 @@ aside {
   justify-content: center;
 }
 
+aside a {
+  width: 90%;
+  height: 275px;
+}
+
 aside img {
   width: 90%;
   height: 275px;
+}
+
+.card a {
+  text-decoration: none;
+  color: black;
 }
 
 h2 {
@@ -89,14 +99,15 @@ p.price {
   font-size: 1.2rem;
 }
 
-p.prevPrice {
+p.discPrice {
+  display: none;
   font-size: inherit;
   color: grey;
   text-decoration: line-through;
 }
 
-.side p:last-child {
-  margin-left: 20px;
+.side p:first-child {
+  margin-right: 20px;
 }
 
 .side img {

@@ -23,7 +23,7 @@ aside button {
   font-size: 14px;
 }
 
-p#prevPrice {
+p#discPrice {
   text-decoration: line-through;
   color: gray;
   font-size: 14px;

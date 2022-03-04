@@ -4,6 +4,10 @@
   {{ $book->title }}
 @endsection
 
+@push('add-on-meta')
+  <meta name="bookid" content="{{ $book->id }}">
+@endpush
+
 @push('add-on-style')
   <link rel="stylesheet" href="/css/buyer/book_info.css">
 @endpush
@@ -11,11 +15,13 @@
 @section('content')
   <aside>
     <img src="{{ $book->coverURL }}" alt="" srcset="">
-    <p id="prevPrice">Rp. 34.000</p>
+    <p id="discPrice">Rp. 34.000</p>
     <p id="price">Rp. 74.000</p>
     <button class="slim-button">Baca Sample</button>
-    <button class="slim-button">Tambah ke Keranjang</button>
-    <button class="slim-button">Tambah ke Wishlist</button>
+    <button class="slim-button" id="btnAddToCart">Tambah ke Keranjang</button>
+    <button class="slim-button" id="btnRemoveFromCart">Hapus dari Keranjang</button>
+    <button class="slim-button" id="btnAddToWishlist" onclick="addBookToWishlist()">Tambah ke Wishlist</button>
+    <button class="slim-button" id="btnRemoveFromWishlist" onclick="removeBookFromWishlist()">Hapus dari Wishlist</button>
     <button class="slim-button">Beli</button>
     <button class="slim-button">Beri Rating</button>
   </aside>
@@ -64,5 +70,5 @@
 @endsection
 
 @push('add-on-script')
-  <script src="" type="text/javascript"></script>
+  <script src="/js/buyer/book_info.js" type="text/javascript"></script>
 @endpush
