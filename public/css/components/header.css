@@ -18,6 +18,10 @@
   height: 30px;
 }
 
+#nav-icon a {
+  height: 30px;
+}
+
 #nav-search {
   width: 600px;
   position: relative;

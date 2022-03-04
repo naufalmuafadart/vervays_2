@@ -12,8 +12,8 @@
   </section>
   
   <section id="nav-icon">
-    <img src="/image/navbar/ic_heart.png" alt="">
-    <img src="/image/navbar/ic_cart.png" alt="">
+    <a href="/user/wishlist"><img src="/image/navbar/ic_heart.png" alt=""></a>
+    <a href="/user/cart"><img src="/image/navbar/ic_cart.png" alt=""></a>
   </section>
   
   <section id="user-sec">
