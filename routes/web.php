@@ -30,6 +30,10 @@ Route::middleware(['IsLogin', 'IsEmailVerified'])->group(function() {
     
     Route::get('/home', "buyer\HomeController@index")->name('home');
     Route::get('/book/{id}/{title}', "buyer\BookController@index");
+
+    Route::prefix('/user')->group(function() {
+        Route::get('/wishlist', 'buyer\WishesController@index');
+    });
     
     Route::prefix('/publisher')->middleware(['IsPublisher'])->group(function() {
         Route::get('/', 'publisher\DashboardController@index')->name('dashboard-publisher');
