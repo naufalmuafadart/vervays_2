@@ -11,7 +11,7 @@ h1 {
   margin-bottom: 15px;
 }
 
-aside,
+#pageContent aside,
 .author-container,
 .rating-container,
 .price-and-button-container,
@@ -20,16 +20,16 @@ aside,
   flex-direction: row;
 }
 
-aside {
+#pageContent aside {
   justify-content: center;
 }
 
-aside a {
+#pageContent aside a {
   width: 90%;
   height: 275px;
 }
 
-aside img {
+#pageContent aside img {
   width: 90%;
   height: 275px;
 }
